@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Massive PVO Simulator</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <div id="root">
+    <div id="map"></div>
+    <canvas id="overlay"></canvas>
+
+    <div id="hud">
+      <div class="top">
+        <div class="title">Massive PVO Simulator</div>
+        <div class="controls">
+          <button id="startBtn" class="primary">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+      </div>
+
+      <div class="stats">
+        <div id="score">Score: 0</div>
+        <div id="money">Funds: 0</div>
+        <div id="time">Time: 0s</div>
+      </div>
+
+      <div class="actions">
+        <button id="buildBattery">Build Battery (-100)</button>
+        <button id="upgradeRadar">Upgrade Radar (-200)</button>
+        <button id="toggleAuto">Auto-PVO: OFF</button>
+      </div>
+
+      <div id="log"></div>
+    </div>
+
+    <div id="spawner">
+      <button id="spawnPlane">Spawn Plane</button>
+      <button id="spawnDrone">Spawn Drone</button>
+      <button id="spawnCruise">Spawn Cruise</button>
+    </div>
+
+    <div id="tooltip" class="tooltip" style="display:none"></div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="entities.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
+
+<div id="menu">
+  <div class="menu-content">
+    <h1>Sky Shield</h1>
+    <button id="playBtn">🎯 Начать игру</button>
+    <button id="optionsBtn">⚙️ Настройки</button>
+    <button id="aboutBtn">ℹ️ Об игре</button>
+  </div>
+
+  <div id="options" class="hidden">
+    <h2>Настройки</h2>
+    <label>Громкость: <input type="range" min="0" max="100" value="70"></label><br>
+    <label><input type="checkbox" id="autoPvoCheckbox"> Авто-ПВО по умолчанию</label><br>
+    <button id="backBtn1">← Назад</button>
+  </div>
+
+  <div id="about" class="hidden">
+    <h2>Об игре</h2>
+    <p>Вы командир системы ПВО. Цель — защитить город от воздушных угроз: дронов, самолётов и ракет.</p>
+    <p>Кликай по карте, чтобы запускать ракеты вручную, или включай авто-ПВО.</p>
+    <button id="backBtn2">← Назад</button>
+  </div>
+</div>
+

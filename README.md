@@ -1,2 +1,1 @@
-# SkyDefense
-server
+# DeltaDrone
